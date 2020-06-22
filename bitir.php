@@ -4,12 +4,28 @@
 <?php
             require_once 'class/vendor/autoload.php';
 // $pos->setCard('375622005485014', '10', '20', '123');
-$pos = new \SanalPos\Garanti\SanalPosGaranti('7000679', '30691297', 'PROVAUT', '123qweASD', 'PROVAUT');
+$pos = new \SanalPos\Garanti\SanalPosGaranti('7000679', '30691301', 'PROVAUT', '123qweASD/', 'PROVAUT');
+
 // merchantId, $terminalId, $userId, $password, $provisionUser --> conrtruct bilgileri 
-$pos->setCard('4282209027132016', '05', '15', '232');
+$pos->setCard('5549608789641500', '03', '23', '712');
+
+/*
+strMode = "TEST"
+strVersion = "v0.01"
+strTerminalID = "30691297"
+strTerminalID_ = "030691297" 'TerminalID başına 0 ile 9 digit yapılmalı
+strProvUserID = "PROVAUT"
+strProvisionPassword = "123qweASD/" 'SanalPos şifreniz ( PROVAUT kullanıcısının şifresi )
+strUserID = "PROVAUT"
+strMerchantID = "7000679" ‘Uye isyeri no
+*/
+
+
 
 // 100 liralık peşin sipariş var. 
-$pos->setOrder('st123456789st', 'test@test.com', '100');
+$pos->setOrder('32432432', 'test@mihaki.com', '10');
+
+
 $pos->setMode('TEST');
 var_dump($pos->pay());
 

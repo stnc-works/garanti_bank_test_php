@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by Sinan Taga.
+ * User: sinan
+ * Date: 31/05/14
+ * Time: 18:24
+ */
 namespace SanalPos\Garanti;
 
 use SanalPos\SanalPosBase;
@@ -13,6 +18,8 @@ class SanalPosGaranti extends SanalPosBase implements SanalPosInterface{
 
     protected $prodServer = 'https://sanalposprov.garanti.com.tr/VPServlet';
     protected $testServer = 'https://sanalposprovtest.garanti.com.tr/VPServlet';
+
+    protected $merchantId;
     protected $terminalId;
     protected $userId;
     protected $password;
