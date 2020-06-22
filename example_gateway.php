@@ -27,9 +27,10 @@ $params = array(
 
     // garantisanalpotemdtesrtr
     // 'storeKey' => "676172616e746973616e616c706f74656d64746573727472", // 24byte hex 3D secure anahtarı
-    'storeKey' => "garantisanalpotemdtesrtr", // 24byte hex 3D secure anahtarı
-    'successUrl' => "http://garanti.test/example.php?action=success", // Başarılı ödeme sonrası dönülecek adres
-    'errorUrl' => "http://garanti.test/example.php?action=error", // Hatalı ödeme sonrası dönülecek adres
+    // 'storeKey' => "garantisanalpotemdtesrtr", // 24byte hex 3D secure anahtarı
+    'storeKey' => "12345678", // 24byte hex 3D secure anahtarı
+    'successUrl' => "http://garanti.test/example_gateway.php?action=success", // Başarılı ödeme sonrası dönülecek adres
+    'errorUrl' => "http://garanti.test/example_gateway.php?action=error", // Hatalı ödeme sonrası dönülecek adres
     'companyName' => "GarantiPos PHP", // Firma adı
     'paymentType' => "creditcard", // Ödeme tipi - kredi kartı için: "creditcard", GarantiPay için: "garantipay"
 
@@ -44,10 +45,10 @@ $params = array(
 
     // Kart bilgisi tanımları (GarantiPay ile ödemede bu alanların doldurulması zorunlu değildir)
     'cardName' => "sdsd sdsd", // Kart üzerindeki ad soyad
-    'cardNumber' => "5549608789641500", // Kart numarası (16 haneli boşluksuz)
-    'cardExpiredMonth' => "03", // Kart geçerlilik tarihi ay
-    'cardExpiredYear' => "23", // Kart geçerlilik tarihi yıl (yılın son 2 hanesi)
-    'cardCvv' => "712", // Kartın arka yüzündeki son 3 numara(CVV kodu)
+    'cardNumber' => "4282209004348015", // Kart numarası (16 haneli boşluksuz)
+    'cardExpiredMonth' => "09", // Kart geçerlilik tarihi ay
+    'cardExpiredYear' => "18", // Kart geçerlilik tarihi yıl (yılın son 2 hanesi)
+    'cardCvv' => "123", // Kartın arka yüzündeki son 3 numara(CVV kodu)
 );
 
 print_r($params);
@@ -68,7 +69,7 @@ if ($action) {
 
     print_r($result);
 } else {
-    $garantipos->debugUrlUse = true; // Parametre değerlerinin check edildiği adrese gönderilmesi
+    $garantipos->debugUrlUse = false; // Parametre değerlerinin check edildiği adrese gönderilmesi
 
     $garantipos->pay(); // 3D doğrulama için bankaya yönlendiriliyor
 }

@@ -8,20 +8,20 @@
         $strApiVersion = "v0.01";
         $strTerminalProvUserID = "PROVAUT";
         $strType = "sales";
-        $strAmount = "100"; //Ýþlem Tutarý 1.00 TL için 100 gönderilmeli
+        $strAmount = "100"; //ï¿½ï¿½lem Tutarï¿½ 1.00 TL iï¿½in 100 gï¿½nderilmeli
         $strCurrencyCode = "949";
-        $strInstallmentCount = ""; //Taksit Sayýsý. Boþ gönderilirse taksit yapýlmaz
-        $strTerminalUserID = "XXXXXX";
+        $strInstallmentCount = ""; //Taksit Sayï¿½sï¿½. Boï¿½ gï¿½nderilirse taksit yapï¿½lmaz
+        $strTerminalUserID = "30691298";
         $strOrderID = "DENEME";
         $strCustomeripaddress = "127.0.0.1";
         $strcustomeremailaddress = "eticaret@garanti.com.tr";
-        $strTerminalID = "XXXXXXXX";
-        $strTerminalID_ = "0XXXXXXXX"; //Baþýna 0 eklenerek 9 digite tamamlanmalýdýr.
-        $strTerminalMerchantID = "XXXXXX"; //Üye Ýþyeri Numarasý
-        $strStoreKey = "XXXXXX"; //3D Secure þifreniz
-        $strProvisionPassword = "XXXXXX"; //TerminalProvUserID þifresi
-        $strSuccessURL = "https://<sunucu_adresi>/Gate3DEngineCallBack.php";
-        $strErrorURL = "https://<sunucu_adresi>/Gate3DEngineCallBack.php";
+        $strTerminalID = "7000679";
+        $strTerminalID_ = "07000679"; //Baï¿½ï¿½na 0 eklenerek 9 digite tamamlanmalï¿½dï¿½r.
+        $strTerminalMerchantID = "30691298"; //ï¿½ye ï¿½ï¿½yeri Numarasï¿½
+        $strStoreKey = "676172616e746973616e616c706f74656d64746573727472"; //3D Secure ï¿½ifreniz
+        $strProvisionPassword = "123qweASD/"; //TerminalProvUserID ï¿½ifresi
+        $strSuccessURL = "http://garanti.test/Gate3DEngineCallBack.php";
+        $strErrorURL = "http://garanti.test/Gate3DEngineCallBack.php";
         $SecurityData = strtoupper(sha1($strProvisionPassword.$strTerminalID_));
         $HashData = strtoupper(sha1($strTerminalID.$strOrderID.$strAmount.$strSuccessURL.$strErrorURL.$strType.$strInstallmentCount.$strStoreKey.$SecurityData));
     ?>
@@ -41,7 +41,7 @@
         <br />
         CVV2: <input name="cardcvv2" type="text" />
         <br />
-        <input id="submit" type="submit" value="Ýþlemi Gönder" />
+        <input id="submit" type="submit" value="ï¿½ï¿½lemi Gï¿½nder" />
         <input type="hidden" name="mode" value="<?php  echo $strMode ?>" />
         <input type="hidden" name="apiversion" value="<?php  echo $strApiVersion ?>" />
         <input type="hidden" name="terminalprovuserid" value="<?php  echo $strTerminalProvUserID ?>" />
@@ -59,9 +59,9 @@
         <input type="hidden" name="customeremailaddress" value="<?php  echo $strcustomeremailaddress ?>" />
         <input type="hidden" name="secure3dhash" value="<?php  echo $HashData ?>" />
         <!---
-        'Sipariþe yönelik Fatura bilgilerini göndermek için ekteki opsiyonel alanlar kullanýlabilir.
-        'Eðer birden çok Fatura detayý gönderilecekse orderaddresscount=2 yapýlarak
-        'Tüm element isimlerindeki 1 rakamý 2 yapýlmalýdýr. Örn; orderaddresscity2 gibi...
+        'Sipariï¿½e yï¿½nelik Fatura bilgilerini gï¿½ndermek iï¿½in ekteki opsiyonel alanlar kullanï¿½labilir.
+        'Eï¿½er birden ï¿½ok Fatura detayï¿½ gï¿½nderilecekse orderaddresscount=2 yapï¿½larak
+        'Tï¿½m element isimlerindeki 1 rakamï¿½ 2 yapï¿½lmalï¿½dï¿½r. ï¿½rn; orderaddresscity2 gibi...
         <input type="hidden" name="orderaddresscount" value="1" />
         <input type="hidden" name="orderaddresscity1" value="xxx" />
         <input type="hidden" name="orderaddresscompany1" value="xxx" />

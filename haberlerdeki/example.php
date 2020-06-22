@@ -25,11 +25,17 @@ $params      = [
 
 //Sadece kredi kartı ile ödeme yapıldığında kart bilgileri alınıyor
 if($paymentType=="creditcard"){
+    // $params['cardName']         = "XXX XXX"; //(opsiyonel) Kart üzerindeki ad soyad
+    // $params['cardNumber']       = "4282209004348015"; //Kart numarası, girilen kart numarası Garanti TEST kartıdır
+    // $params['cardExpiredMonth'] = "08"; //Kart geçerlilik tarihi ay
+    // $params['cardExpiredYear']  = "22"; //Kart geçerlilik tarihi yıl
+    // $params['cardCvv']          = "123"; //Kartın arka yüzündeki son 3 numara(CVV kodu)
+
     $params['cardName']         = "XXX XXX"; //(opsiyonel) Kart üzerindeki ad soyad
-    $params['cardNumber']       = "5549608789641500"; //Kart numarası, girilen kart numarası Garanti TEST kartıdır
-    $params['cardExpiredMonth'] = "03"; //Kart geçerlilik tarihi ay
-    $params['cardExpiredYear']  = "23"; //Kart geçerlilik tarihi yıl
-    $params['cardCvv']          = "712"; //Kartın arka yüzündeki son 3 numara(CVV kodu)
+    $params['cardNumber']       = "375622005485014"; //Kart numarası, girilen kart numarası Garanti TEST kartıdır
+    $params['cardExpiredMonth'] = "10"; //Kart geçerlilik tarihi ay
+    $params['cardExpiredYear']  = "20"; //Kart geçerlilik tarihi yıl
+    $params['cardCvv']          = "123"; //Kartın arka yüzündeki son 3 numara(CVV kodu)
 }
 
 
@@ -45,7 +51,7 @@ $garantiPos->provUserID                 = "PROVAUT"; //Terminal prov kullanıcı
 $garantiPos->provUserPassword           = "123qweASD/"; //Terminal prov kullanıcı şifresi
 $garantiPos->garantiPayProvUserID       = ""; //(GarantiPay kullanılmayacaksa boş bırakılabilir) GarantiPay için prov kullanıcı adı
 $garantiPos->garantiPayProvUserPassword = ""; //(GarantiPay kullanılmayacaksa boş bırakabilir) GarantiPay için prov kullanıcı şifresi
-$garantiPos->storeKey                   = "garantisanalpotemdtesrtr"; //24byte hex 3D secure anahtarı
+$garantiPos->storeKey                   = "676172616e746973616e616c706f74656d64746573727472"; //24byte hex 3D secure anahtarı
 $garantiPos->successUrl                 = "http://garanti.test/haberlerdeki/example.php?action=success"; //3D başarıyla sonuçlandığında provizyon çekmek için yönlendirilecek adres
 $garantiPos->errorUrl                   = "http://garanti.test/haberlerdeki/example.php?action=error"; //3D başarısız olduğunda yönlenecek sayfa
 
